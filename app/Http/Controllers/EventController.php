@@ -30,7 +30,7 @@ class EventController extends Controller
             $value = Cache::get($id);
 
             if ($value == null) {
-                return response()->json(0, Response::HTTP_NOT_FOUND);
+                return response()->json(0, Response::HTTP_CREATED);
             }
             $value = Cache::decrement($id, $amount);
 
