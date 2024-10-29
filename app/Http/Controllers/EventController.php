@@ -26,6 +26,7 @@ class EventController extends Controller
         }
 
         if ($operation == 'withdraw') {
+            $id = $request->get('origin');
             $value = Cache::get($id);
 
             if ($value == null) {
