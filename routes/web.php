@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/reset', function () {
     Cache::flush();
-    return response()->json("OK", Response::HTTP_OK);
+
+    return response("OK", Response::HTTP_OK);
 });
 
 Route::get('/balance', [BalanceController::class, 'getBalance']);
