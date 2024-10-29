@@ -30,7 +30,7 @@ class EventController extends Controller
             $value = Cache::get($id);
 
             if ($value == null) {
-                return response()->json(0, Response::HTTP_CREATED);
+                return response()->json(0, Response::HTTP_NOT_FOUND);
             }
             $value = Cache::decrement($id, $amount);
 
@@ -40,6 +40,8 @@ class EventController extends Controller
                     'balance' => $value,
                 ],
             ];
+
+            return response()->json($result, Response::HTTP_CREATED);
         }
 
         if ($operation == 'transfer') {
