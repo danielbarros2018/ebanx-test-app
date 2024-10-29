@@ -41,7 +41,6 @@ class EventController extends Controller
                 ],
             ];
 
-            return response()->json($result, Response::HTTP_CREATED);
         }
 
         if ($operation == 'transfer') {
@@ -68,7 +67,7 @@ class EventController extends Controller
             ];
         }
 
-        return response()->json($result, Response::HTTP_OK);
+        return response()->json($result, Response::HTTP_CREATED);
 
     }
 }
